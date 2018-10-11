@@ -1,0 +1,38 @@
+th{
+	background-color: grey;
+	border: solid black 2px;
+}
+tr{
+	border: solid black 2px;
+}
+table{
+	width: 100%;
+	border-style: black;
+}
+button{
+	display: inline-block;
+	color: white;
+}
+.inlineblock{
+	display: inline-block;
+}
+.greenbutton{
+	background-color: darkgreen;
+	vertical-align: top;
+	margin-left: 65%;
+}
+.redbutton{
+	background-color: red;
+}
+.goldbutton{
+	background-color: gold;
+}
+td{
+	width:20%;
+	text-align: center;
+	border: solid black 2px;
+}
+#wrapper{
+	border: solid black 2px;
+	padding:2%;
+}

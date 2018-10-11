@@ -1,0 +1,11 @@
+<p style="color:blue" [routerLink]="['']">Home</p>
+<h2>Add a new author:</h2>
+<form (submit)="addAuthor($event)">
+	<input 
+	type="text" 
+	name="new_author.name" 
+	[(ngModel)]="new_author.name"
+	>
+	<input type="submit" value="Create new author">
+</form>
+<p>{{error}}</p>

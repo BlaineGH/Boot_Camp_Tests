@@ -1,0 +1,47 @@
+<div id="wrapper">	
+	<h1>Update Product</h1>
+	<small
+		[hidden]="name.valid || (name.untouched && !form.submitted)">
+		Name must be more than 3 characters
+	</small>
+	<small
+		[hidden]="qty.valid || (qty.untouched && !form.submitted)">
+		Quantity needs a value, if it's 0 you can delete it
+	</small>
+	<small
+		[hidden]="price.valid || (price.untouched && !form.submitted)">
+		Price must be greater than 0
+	</small>
+	<form (submit)="editProduct($event)" #form="ngForm">
+		<label>Name</label>
+		<input class="input" 
+		type="text" 
+		name="name" 
+		[(ngModel)]="product.name"
+		#name = "ngModel"
+		minlength="3"
+		required 
+		>
+		<label>Qty</label>
+		<input class="input"
+		type="number" 
+		name="qty" 
+		[(ngModel)]="product.qty"
+		#qty = "ngModel"
+		required 
+		>
+		<label>Price</label>
+		<input class="input"
+		type="number" 
+		name="price" 
+		[(ngModel)]="product.price"
+		#price = "ngModel"
+		min = "1"
+		required 
+		>
+		<div id="buttons">
+			<button class="buttons" [routerLink]="['']">RESET</button>
+			<input class="buttons" style="background-color: lightgreen" type="submit" value="UPDATE">
+		</div>
+	</form>
+</div>

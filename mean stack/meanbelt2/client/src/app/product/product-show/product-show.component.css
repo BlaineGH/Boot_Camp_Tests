@@ -1,0 +1,36 @@
+#wrapper{
+	border: solid black 2px;
+}
+h1{
+	vertical-align: top;
+}
+small{
+	color: purple;
+	vertical-align: top;
+	font-size: 20px;
+}
+h2{
+	color: lightgrey;
+	text-align: left;
+	font-size:30px;
+	/*margin-bottom: -25px;*/
+	margin-bottom: -30px;
+}
+p{
+	display:block;
+	margin-left: 45%;
+	font-size: 20px;
+}
+.lightredbutton{
+	background-color: red;
+	border: solid darkred;
+	margin-left: 40%;
+}
+.redbutton{
+	background-color: darkred;
+	color: white;
+}
+button{
+	padding: 15px;
+
+}

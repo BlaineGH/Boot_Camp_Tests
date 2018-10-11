@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show</title>
+</head>
+<body>
+	<div>
+		<a href="{% url 'quotes' %}">Dashboard</a>
+			<a href="{% url 'logout' %}">Logout</a>
+		<div>
+			<h1>Posts by: {{user}}</h1>
+			<p>Count: {{count}}</p>
+			{% for quote in usermade %}
+			<p><span class="red">{{quote.name}}</span>: {{quote.msg}}</p>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<div id="wrapper">
+	<div class="inlineblock">
+	<h1>Product List</h1>
+	</div>
+	<button class="greenbutton" [routerLink]="['new']">Add New Product</button>
+	<table>
+		<tr>
+			<th>
+				id
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Qty
+			</th>
+			<th>
+				Price
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+		<tr *ngFor="let i of productlist">
+			<td>
+				{{i._id}}
+			</td>
+			<td>
+				{{i.name}}
+			</td>
+			<td>
+				{{i.qty}}
+			</td>
+			<td>
+				{{i.price}}
+			</td>
+			<td>
+				<button class="goldbutton" [routerLink]="['edit/', i._id]">Edit</button>
+				<button class="redbutton" [routerLink]="['details', i._id]">Details</button>
+			</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,33 @@
+#wrapper{
+	border: solid black 2px;
+	padding:2%;
+}
+h1{
+	vertical-align: top;
+}
+small{
+	color: purple;
+	vertical-align: top;
+	font-size: 20px;
+}
+label{
+	color: lightgrey;
+	text-align: left;
+	font-size:30px;
+	/*margin-bottom: -25px;*/
+}
+.input{
+	display: block;
+	margin-left: 45%;
+}
+#buttons{
+	margin-left: 45%;
+	padding: 1%;
+}
+button{
+	background-color: red;
+	border:solid darkred;
+}
+.buttons{
+	padding:10px;
+}

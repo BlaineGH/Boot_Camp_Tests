@@ -1,0 +1,49 @@
+<div id="wrapper">
+	<h1>New Product</h1>
+	<small
+		[hidden]="name.valid || (name.untouched && !form.submitted)">
+		Name must be more than 3 characters |
+	</small>
+	<small
+		[hidden]="qty.valid || (qty.untouched && !form.submitted)">
+		Quantity must be greater than 0 |
+	</small>
+	<small
+		[hidden]="price.valid || (price.untouched && !form.submitted)">
+		Price must be greater than 0
+	</small>
+	<form (submit)="addProduct($event)" #form="ngForm">
+		<label>Name</label>
+		<input class="input" 
+		type="text" 
+		name="name" 
+		[(ngModel)]="new_product.name"
+		#name = "ngModel"
+		minlength="3"
+		required 
+		>
+		<label>Qty</label>
+		<input class="input"
+		type="number" 
+		name="qty" 
+		[(ngModel)]="new_product.qty"
+		#qty = "ngModel"
+		min="1" 
+		required 
+		>
+		<label>Price</label>
+		<input class="input"
+		type="number" 
+		name="price" 
+		[(ngModel)]="new_product.price"
+		#price = "ngModel"
+		min = "1"
+		required 
+		>
+		<div id="buttons">
+			<button class="buttons" [routerLink]="['']">RESET</button>
+			<input class="buttons" style="background-color: lightblue" [disabled]="!form.valid" type="submit" value="CREATE">
+		</div>
+	</form>
+	{{error}}
+</div>

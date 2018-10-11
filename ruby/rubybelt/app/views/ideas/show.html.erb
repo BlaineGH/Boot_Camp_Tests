@@ -1,0 +1,33 @@
+<div class="wrapper">
+	<% if flash[:errors] %>
+	<ul>
+		<% flash[:errors].each do |error| %>
+		<li class="errors"><%= error %></li>
+		<% end %>
+	</ul>
+	<% end %>
+	<div class="ideaform">
+		<form action="/ideas" method="post">
+			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+			<input type="hidden" name="idea[user_id]" value="<%= current_user.id %>">
+			<input id="ideabar" rows="1" name="idea[content]" placeholder="Post an idea!">
+			<input id="ideabutton" type="submit" class="btn btn-primary" value="Idea!">
+		</form>
+	</div>
+	<hr>
+	<div class="namesays">
+		<% @ideas.each do |idea| %>
+			<a id="link" href="/users/<%= idea.user_id %>"><%= idea.user.alias %></a> <p id="says">says:</p>
+			<div class="border">
+				<%= idea.content %>	
+			</div>
+			<% if current_user == idea.user %>
+				<a id="link" href="/ideas/<%= idea.id %>" data-method="delete">X</a>
+			<% end %>
+			<div class="bottomlikes">
+				<a id="link" data-method="post" href="/likes/<%= idea.id %>">Like</a> | <a href="/bright_ideas/<%= idea.id %>"><%= idea.likes.count %> people</a> <p id="says">like this.</p> 
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

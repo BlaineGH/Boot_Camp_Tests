@@ -1,0 +1,17 @@
+<% if current_user %>
+	<% if current_page?("/bright_ideas") %>
+		<div style="display: inline-block;">
+			<h1>Hi, <%= current_user.name %>!</h1>
+		</div>
+	<% end %>
+	<% if current_page?("/bright_ideas") %>
+		<div style="display: inline-block; width: 70%; text-align: right;"> 
+			<a id="link" data-method="delete" href="/sessions/<%= current_user.id %>">Logout</a>
+		</div>
+	<% else %>
+		<div style="display: inline-block; width: 100%; text-align: right;">
+			<a id="link" href="/bright_ideas">Bright Ideas</a> | 
+			<a id="link" data-method="delete" href="/sessions/<%= current_user.id %>">Logout</a>
+		</div>
+	<% end %>
+<% end %>
